@@ -25,7 +25,7 @@ class RollsController:
             self.model.set_ingredients(new_ingredients)
             return 'Рецепт изменен!'
         else:
-            return 'У вас нет права доступа :('
+            return 'forbidden'
 
     def set_quantity(self, user_rights, new_quantity: int):
         if user_rights in ['Director', 'Admin', 'IsStaff']:
