@@ -48,3 +48,12 @@ class RollsView:
             print('У вас нет права доступа :(')
         else:
             print(self.controller.set_picture(user_rights, new_picture))
+
+    def save_order_to_json(self, order):
+        print(self.controller.save_order_to_json(order))
+
+    def get_data_from_json(self, user_rights, order):
+        if self.controller.get_data_from_json(user_rights, order) == 'forbidden':
+            print('У вас нет права доступа :(')
+        else:
+            print(self.controller.get_data_from_json(user_rights,order))

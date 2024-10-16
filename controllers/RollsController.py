@@ -55,3 +55,12 @@ class RollsController:
             return 'Фото изменено!'
         else:
             return 'forbidden'
+
+    def save_order_to_json(self, order):
+        return self.model.save_order_to_json(order)
+
+    def get_data_from_json(self, user_rights, order):
+        if user_rights in ['Director', 'Admin', 'IsStaff']:
+            return self.model.get_data_from_json(order)
+        else:
+            return 'forbidden'
